@@ -90,8 +90,9 @@ public class HttpClientComponent {
 	public HttpResult doPost(String url, Map<String, String> params,String token) throws IOException {
 		// 创建http POST请求
 		HttpPost httpPost = new HttpPost(url);
-		httpPost.setHeader("Content-Type", "application/x-www-form-urlencoded");
-		httpPost.setHeader("Authorization", "Bearer "+token);
+		//httpPost.setHeader("Content-Type", "application/x-www-form-urlencoded");
+		//httpPost.setHeader("Authorization", "Bearer "+token);
+		//httpPost.setHeader("Accept", "application/json");
 		httpPost.setConfig(this.requestConfig);
 		if (params != null) {
 			// 设置2个post参数，一个是scope、一个是q
