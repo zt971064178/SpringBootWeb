@@ -142,11 +142,17 @@ public class HttpClientComponent {
 		// 创建http POST请求
 		HttpPost httpPost = new HttpPost(url);
 		httpPost.setConfig(this.requestConfig);
-		httpPost.setHeader("Content-Type", "application/x-www-form-urlencoded");
 
 		if (json != null) {
 			System.out.println(json);
 			// 构造一个form表单式的实体
+			/**
+			 * 这里是json数据的请求头，所以服务端需要是下面的json请求头，否则无法接收到json串数据
+			 *  @Path("demo")
+				@POST
+				@Produces("application/json")
+				public String demo(String json)
+			 */
 			StringEntity stringEntity = new StringEntity(json, ContentType.APPLICATION_JSON);
 			// 将请求实体设置到httpPost对象中
 			System.out.println(stringEntity);
