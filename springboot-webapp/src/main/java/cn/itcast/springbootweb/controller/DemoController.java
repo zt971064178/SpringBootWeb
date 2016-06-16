@@ -1,9 +1,10 @@
 package cn.itcast.springbootweb.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.fastjson.JSONObject;
 
@@ -12,7 +13,7 @@ import cn.itcast.springbootweb.properties.HttpClientProperties;
 /*
  * Demo测试
  */
-@RestController
+@Controller
 @RequestMapping("/spring/web/")
 public class DemoController {
 	
@@ -20,6 +21,7 @@ public class DemoController {
 	private HttpClientProperties httpClientProperties ;
 
 	@RequestMapping(value="demo", method=RequestMethod.GET)
+	@ResponseBody
 	public String demoTest() {
 		JSONObject jsonObject = new JSONObject() ;
 		jsonObject.put("username", "张田") ;
@@ -30,6 +32,7 @@ public class DemoController {
 	}
 	
 	@RequestMapping(value="prop", method=RequestMethod.GET)
+	@ResponseBody
 	public String propTest() {
 		return JSONObject.toJSONString(httpClientProperties) ;
 	}
