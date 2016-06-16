@@ -8,6 +8,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /*
  * SpringBootWeb配置java配置
+ * 总体配置
  */
 @Configuration
 @EnableWebMvc
