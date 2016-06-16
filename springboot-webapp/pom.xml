@@ -18,8 +18,7 @@
   <dependencies>
   	<dependency> 
 	    <groupId>org.springframework.boot</groupId> 
-	    <!-- 使用其，会自动包含spring-boot-starter-web --> 
-	    <artifactId>spring-boot-starter-thymeleaf</artifactId> 
+	    <artifactId>spring-boot-starter-web</artifactId> 
 	    <exclusions> 
 	    	<exclusion> 
 	    		<groupId>org.springframework.boot</groupId> 
