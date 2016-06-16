@@ -38,10 +38,18 @@
 	</dependency> --> 
 	 
 	<!-- 排除web中自带的tomcat容器，替换为jetty服务器 --> 
+	<!-- 发布war包时要把这段代码注释掉 -->
 	<dependency> 
 		<groupId>org.springframework.boot</groupId> 
 		<artifactId>spring-boot-starter-jetty</artifactId> 
 	</dependency> 
+	
+	<!-- 发布war包时要把这段代码加上 -->
+	<dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-tomcat</artifactId>
+        <scope>provided</scope>
+	</dependency>
 	 
 	<!-- 使用log4j日志处理 --> 
 	<!-- <dependency>   
