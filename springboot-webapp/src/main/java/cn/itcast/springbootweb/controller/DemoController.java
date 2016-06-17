@@ -37,4 +37,10 @@ public class DemoController {
 		return JSONObject.toJSONString(httpClientProperties) ;
 	}
 	
+	@RequestMapping("code")
+	@ResponseBody
+	public String getCode() {
+		return "中华人民共和国编码Code@!" ;
+	}
+	
 }

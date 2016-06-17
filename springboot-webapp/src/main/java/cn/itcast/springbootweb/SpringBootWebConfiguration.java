@@ -1,12 +1,8 @@
 package cn.itcast.springbootweb;
 
-import javax.servlet.Filter;
-
-import org.springframework.context.annotation.Bean;
+import org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
@@ -17,7 +13,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableWebMvc
 @EnableSwagger2
-public class SpringBootWebConfiguration extends WebMvcConfigurerAdapter {
+public class SpringBootWebConfiguration extends WebMvcAutoConfigurationAdapter {
 	
 	/*
 	 * 强制转换编码
