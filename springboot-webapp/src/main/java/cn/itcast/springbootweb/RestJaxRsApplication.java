@@ -1,5 +1,8 @@
 package cn.itcast.springbootweb;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import org.glassfish.jersey.filter.LoggingFilter;
 import org.glassfish.jersey.jackson.JacksonFeature;
 import org.glassfish.jersey.server.ResourceConfig;
@@ -15,12 +18,18 @@ public class RestJaxRsApplication extends ResourceConfig {
 	  register(DemoServer.class);
       register(RequestContextFilter.class);
       //注册数据转换器 
-      register(JacksonJsonProvider.class); 
+      //register(JacksonJsonProvider.class); 
       // Logging. 
-      register(LoggingFilter.class); 
+      //register(LoggingFilter.class); 
       
-      //register(CORSResponseFilter.class);
-      //register(JacksonFeature.class);
+      register(CORSResponseFilter.class);
+      register(JacksonFeature.class);
+      
+    //swagger  
+     Set<Class<?>> resources = new HashSet<>();  
+     resources.add(io.swagger.jaxrs.listing.ApiListingResource.class);  
+     resources.add(io.swagger.jaxrs.listing.SwaggerSerializers.class);  
+     registerClasses(resources);  
 
 	}
 }
