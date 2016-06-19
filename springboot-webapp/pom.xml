@@ -120,18 +120,12 @@
 		<artifactId>spring-boot-starter-jersey</artifactId> 
 	</dependency> 
 	
-	<dependency>  
-		<groupId>io.swagger</groupId>  
-		<artifactId>swagger-jersey2-jaxrs</artifactId>  
-		<version>1.5.0</version>  
-	</dependency> 
-	
 	<dependency>
-	    <groupId>net.sf.tweety</groupId>
-	    <artifactId>web</artifactId>
-	    <version>1.6</version>
+	    <groupId>io.swagger</groupId>
+	    <artifactId>swagger-jersey2-jaxrs</artifactId>
+	    <version>1.5.9</version>
 	</dependency>
-	
+ 
 	<!-- jsp支持配置 -->
 	<dependency>
 		<groupId>org.apache.tomcat.embed</groupId>
