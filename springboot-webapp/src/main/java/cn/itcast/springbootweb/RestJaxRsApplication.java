@@ -7,15 +7,13 @@ import org.glassfish.jersey.filter.LoggingFilter;
 import org.glassfish.jersey.jackson.JacksonFeature;
 import org.glassfish.jersey.server.ResourceConfig;
 
-import cn.itcast.springbootweb.jeresy.server.DemoServer;
-
 public class RestJaxRsApplication extends ResourceConfig {
 	public RestJaxRsApplication() {
-	  // 向jersey框架注册资源类，凡完全限定名是以指定字符串开头的类，都将包含  
+	  // 向jersey框架注册资源类，凡完全限定名是以指定字符串开头的类，都将包含  全能型
 	  packages("cn.itcast.springbootweb.jeresy.server");  
 
-	  // 注册DemoServer
-	  register(DemoServer.class);
+	  // 注册DemoServer 上面的包扫描可以将其包含
+	  // register(DemoServer.class);
 	  register(JacksonFeature.class);  
       // register(RequestContextFilter.class);
       //注册数据转换器 
