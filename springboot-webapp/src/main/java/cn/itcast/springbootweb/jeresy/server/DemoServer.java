@@ -44,12 +44,17 @@ public class DemoServer {
             @ApiResponse(code = 400, message = "Invalid ID supplied"),
             @ApiResponse(code = 404, message = "Product not found")
     })
-    public Response getProduct(@ApiParam(value = "Resource identifier", required = false) @QueryParam("id") Integer id) {
+    public String getProduct(@ApiParam(value = "Resource identifier", required = false) @QueryParam("id") Integer id) {
 		System.out.println("进入Get:"+id);
+		JSONObject jsonObject = new JSONObject() ;
+		jsonObject.put("id", id) ;
+		jsonObject.put("name", "SD娃娃") ;
 		if(id ==null){
-            return Response.status(Response.Status.NO_CONTENT).allow("OPTIONS").build();
+			return jsonObject.toJSONString() ;
+           // return Response.status(Response.Status.NO_CONTENT).allow("OPTIONS").build();
         }else {
-            return Response.status(Response.Status.NO_CONTENT).allow("OPTIONS").build();
+        	return jsonObject.toJSONString() ;
+           // Response.status(Response.Status.NO_CONTENT).allow("OPTIONS").build();
         }
     }
 	

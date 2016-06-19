@@ -14,7 +14,7 @@ public class JerseySpringConfig {
 	@Bean
     public ServletRegistrationBean jerseyServlet() {
 		// 注意匹配路径不要是/*，这样会将swagger的访问路径http://127.0.0.1/swagger-ui.html拦截，直接进入到hersy服务了
-        ServletRegistrationBean registration = new ServletRegistrationBean(new ServletContainer(), "/jersey");
+        ServletRegistrationBean registration = new ServletRegistrationBean(new ServletContainer(), "/jersey/*");
         registration.addInitParameter(ServletProperties.JAXRS_APPLICATION_CLASS, RestJaxRsApplication.class.getName());
         return registration;
     }
